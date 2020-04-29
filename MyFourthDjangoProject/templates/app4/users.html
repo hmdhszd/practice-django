@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users' page</title>
+</head>
+<body>
+	<h1>Here are the User info:</h1>
+    {% if users %}
+    	<ol>
+        {% for user in users %}
+        	<li>User Info:</li>
+
+        	<ul>
+        		<li>First Name:    {{user.first_name}}</li>
+        		<li>Last Name:     {{user.last_name}}</li>
+        		<li>Email Address: {{user.email}}</li>
+        	</ul>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>There are not any users</p>
+    {% endif %}
+</body>
+</html>
