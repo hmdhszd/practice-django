@@ -1,10 +1,44 @@
 <!DOCTYPE html>
+ {% load static %} 
 <html>
 <head>
 	<title>New App Template</title>
+	<link rel="stylesheet" type="text/css" href="{% static "CSS/mystyle.css" %}">
 </head>
 <body>
-	<h1>Hello Indexxxx</h1>
-    {{insert_me}}
+	<h1>Django Level2</h1>
+	<h2>Here are the Access Records:</h2>
+	
+	<div class="Django2">
+		
+		{% if access_records %}
+
+			<table>
+				<thead>
+					<th>Site Name</th>
+					<th>Date Accessed</th>
+				</thead>
+
+				{% for acc in access_records %}
+				<tr>
+					<td> {{acc.name}} </td>
+					<td> {{acc.date}} </td>
+				</tr>
+				
+				{% endfor %}
+
+			</table>
+		{% else %}
+			<p>No Records Found!</p>
+
+		{% endif %}
+
+
+
+		
+	</div>
+
+    
+    
 </body>
 </html>
