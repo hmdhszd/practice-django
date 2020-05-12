@@ -2,23 +2,21 @@
 <html>
 <head>
 	<title>Users' page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-	<h1>Here are the User info:</h1>
-    {% if users %}
-    	<ol>
-        {% for user in users %}
-        	<li>User Info:</li>
+   	<div class="container">
+		<div  class="jumbotron">
 
-        	<ul>
-        		<li>First Name:    {{user.first_name}}</li>
-        		<li>Last Name:     {{user.last_name}}</li>
-        		<li>Email Address: {{user.email}}</li>
-        	</ul>
-        {% endfor %}
-        </ol>
-    {% else %}
-        <p>There are not any users</p>
-    {% endif %}
+			<h1>Please sign up here!</h1>
+
+			<form method="POST">
+				{{ form.as_p }}
+				{% csrf_token %}
+				<input type="submit" class="btn btn-primary" value="submit">
+			</form>
+
+		</div>
+	</div>
 </body>
 </html>
