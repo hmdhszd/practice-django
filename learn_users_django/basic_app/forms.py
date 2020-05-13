@@ -10,7 +10,7 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email','password')
 
 
-class UserProfileInfo(forms.ModelForm):
-    def Meta():
+class UserProfileInfoForm(forms.ModelForm):
+    class Meta():
         model = UserProfileInfo
         fields = ('portfolio_site','profile_pic')
