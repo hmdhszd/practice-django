@@ -1,0 +1,24 @@
+{% extends "basic_app/basic_app_base.html" %}
+
+{% block body_block %}
+
+
+
+<div class="container">
+    <h1>Detail of all schools:</h1>
+    <p>Name:      {{school_detail.name}} </p>
+    <p>Principal: {{school_detail.principal}} </p>
+    <p>Location:  {{school_detail.location}} </p>
+
+    <p>Students:</p>
+    <ol>
+    {% for student in school_detail.students.all %}
+        <p><li> {{ student.name }} who is {{student.age}} years old. </li></p>
+    {% endfor %}
+    </ol>
+
+<div>
+
+
+
+{% endblock body_block %}
