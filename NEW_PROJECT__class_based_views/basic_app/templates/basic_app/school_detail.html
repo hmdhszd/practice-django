@@ -16,7 +16,7 @@
         <p><li> {{ student.name }} who is {{student.age}} years old. </li></p>
     {% endfor %}
     </ol>
-
+    <a href='{% url 'basic_app:update' pk=school_detail.pk %}'>Update</a>
 <div>
 
 
